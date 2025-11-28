@@ -11,10 +11,15 @@ from .model_loader import load_model
 
 app = FastAPI(title="RL Traffic Backend")
 
+origins = [
+    "http://localhost:5173",                   # local development
+    "https://rl-traffic-frontend.vercel.app",  # deployed frontend
+]
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # or ["http://localhost:5173"] for security
-    allow_credentials=True,
+    allow_origins=origins,
+    allow_credentials=False,   # keep this false since you're not using cookies
     allow_methods=["*"],
     allow_headers=["*"],
 )
