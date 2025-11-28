@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+.env
+
+# Model files (keep dqn.pt but ignore others)
+*.pt
+!models/dqn.pt
+
+# Logs
+*.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
